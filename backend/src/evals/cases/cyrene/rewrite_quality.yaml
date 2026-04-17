@@ -1,0 +1,10 @@
+- id: cyrene-preserves-facts
+  agent: cyrene
+  prompt: "Rewrite this post preserving all facts"
+  output_assertions:
+    - ".{500,}"  # Non-trivial output
+  grading: lenient
+  timeout_seconds: 90
+  context:
+    post_text: "We launched our new API last week. It handles 10,000 requests per second with 99.9% uptime. Our enterprise customers in the financial sector have already seen a 40% reduction in integration time."
+    style: "Make it more conversational"

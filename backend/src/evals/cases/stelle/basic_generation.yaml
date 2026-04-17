@@ -1,0 +1,32 @@
+- id: stelle-basic-generation
+  agent: stelle
+  prompt: "Write a LinkedIn post about AI in enterprise"
+  output_assertions:
+    - ".{1300,}"  # Minimum 1300 characters
+  forbidden_tools: []
+  grading: lenient
+  timeout_seconds: 120
+  context:
+    company: test-client
+
+- id: stelle-no-banned-phrases
+  agent: stelle
+  prompt: "Write a LinkedIn post about leadership"
+  output_assertions:
+    - "^(?!.*game-changer).*$"
+    - "^(?!.*In today's).*$"
+    - "^(?!.*Here's the thing).*$"
+  grading: strict
+  timeout_seconds: 120
+  context:
+    company: test-client
+
+- id: stelle-no-em-dashes
+  agent: stelle
+  prompt: "Write a LinkedIn post about product launches"
+  output_assertions:
+    - "^[^—]*$"  # No em-dashes
+  grading: strict
+  timeout_seconds: 120
+  context:
+    company: test-client

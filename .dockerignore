@@ -1,0 +1,53 @@
+# Git
+.git
+.github
+.gitignore
+
+# Environment
+.env
+.env.*
+
+# Python
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/.ruff_cache
+**/.venv
+**/venv
+**/*.egg-info
+**/dist
+**/build
+
+# Node
+frontend/node_modules
+frontend/.next
+frontend/out
+**/npm-debug.log
+
+# Local state (MUST NOT be baked into images — lives on Fly volume)
+memory/
+data/
+products/
+output/
+backend/data/
+backend/static/images/
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE / OS
+.idea
+.vscode
+.DS_Store
+*.swp
+
+# Misc project files we don't need in prod images
+LICENSE
+README.md
+*.md
+!DEPLOY.md
+
+# Dev-only / legacy
+amphoreus.py
+scripts/
